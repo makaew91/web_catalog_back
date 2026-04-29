@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 
+if (PHP_VERSION_ID >= 80500) {
+    error_reporting(error_reporting() & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+}
+
 define('LARAVEL_START', microtime(true));
 
 // Determine if the application is in maintenance mode...
